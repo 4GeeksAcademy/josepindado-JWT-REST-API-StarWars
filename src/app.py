@@ -8,8 +8,8 @@ from flask_swagger import swagger
 from flask_cors import CORS
 from utils import APIException, generate_sitemap
 from admin import setup_admin
-from models import db, User
-from routes.user.user_route import user_bp
+from models import db, User, Planet, People, Favorite
+from routes import user_bp, planet_bp, favourite_bp, people_bp
 #from models import Person
 
 app = Flask(__name__)
@@ -23,7 +23,9 @@ else:
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 app.register_blueprint(user_bp, url_prefix="/user")
-
+app.register_blueprint(planet_bp, url_prefix="/planet")
+app.register_blueprint(people_bp, url_prefix="/people")
+app.register_blueprint(favourite_bp, url_prefix="/favourite")
 
 MIGRATE = Migrate(app, db)
 db.init_app(app)
