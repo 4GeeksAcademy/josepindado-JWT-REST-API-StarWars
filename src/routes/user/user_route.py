@@ -17,7 +17,7 @@ def get_all_users():
     result = [user.serialize() for user in users]
     return jsonify(result), 200
 
-@user_bp.route('/user/favorites', methods=['GET'])
+@user_bp.route('/user/favourites', methods=['GET'])
 def get_user_favorites():
     user_id = request.args.get('user_id')
 
