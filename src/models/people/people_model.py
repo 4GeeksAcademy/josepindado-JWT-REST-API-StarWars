@@ -8,7 +8,7 @@ class People(db.Model):
     eyes_color = db.Column(db.String(50), default="brown")
     hair_color = db.Column(db.String(50), default="black")
 
-    people = db.relationship('Favorite', backref='people')
+    people = db.relationship('Favourite', backref='people')
 
 
     def serialize(self):

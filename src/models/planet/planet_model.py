@@ -6,7 +6,7 @@ class Planet(db.Model):
     name = db.Column(db.String(120), nullable=False)
     description = db.Column(db.String(100), nullable=True)
 
-    planet = db.relationship('Favorite', backref='planet')
+    planet = db.relationship('Favourite', backref='planet')
 
     def serialize(self):
         return {

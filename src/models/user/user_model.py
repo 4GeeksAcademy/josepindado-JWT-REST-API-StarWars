@@ -7,7 +7,7 @@ class User(db.Model):
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
-    favorites = db.relationship('Favorite', backref="user")
+    favourites = db.relationship('Favourite', backref="user")
     
     def __repr__(self):
         return '<User %r>' % self.username
@@ -16,5 +16,5 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
-            "favorite": [fav.serialize() for fav in self.favorites]
+            "favourite": [fav.serialize() for fav in self.favourites]
         }
