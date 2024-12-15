@@ -1,5 +1,5 @@
-from flask import Blueprint
-from models import Favourite
+from flask import Blueprint, request, jsonify
+from models import Favourite, db
 
 favourite_bp = Blueprint('favourite1',__name__) 
 

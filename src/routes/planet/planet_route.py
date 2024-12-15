@@ -1,5 +1,5 @@
-from flask import Blueprint
-from models import Planet
+from flask import Blueprint, request, jsonify
+from models import Planet, db
 
 planet_bp = Blueprint('planet1',__name__) 
 

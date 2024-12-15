@@ -8,6 +8,9 @@ class Planet(db.Model):
 
     planet = db.relationship('Favourite', backref='planet')
 
+    def __repr__(self):
+        return '<Planet %r>' % self.name
+
     def serialize(self):
         return {
             "id": self.id,
